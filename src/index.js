@@ -25,30 +25,32 @@ let emit = socket.emit;
 
 socket.on("connect", () => {
   console.log("connection successful");
-  //   socket.emit("get_omahaRooms", {});
+  // socket.emit("get_omahaRooms", {});
 
-  socket.emit("join_omaharoom", {
+  socket.emit("omaha_request_join_omaha_room", {
     playerId: "uTUc6dzSrWfVE5ncbBWloTlhUGy1",
     roomId: "5d7a514b5d2c12c7449be022",
+    chipsAmount: 10000,
     seatNo: 3,
   });
   setTimeout(() => {
-    socket.emit("join_omaharoom", {
+    socket.emit("omaha_request_join_omaha_room", {
       playerId: "z3Ea65zmolhR2Uvd6O2mKAeei8C3",
       roomId: "5d7a514b5d2c12c7449be022",
+      chipsAmount: 10000,
       seatNo: 4,
     });
   }, 2000);
 
   setTimeout(() => {
-    socket.emit("leave_omahaRoom", {
+    socket.emit("omaha_request_leave_omaha_room", {
       playerId: "uTUc6dzSrWfVE5ncbBWloTlhUGy1",
       roomId: "5d7a514b5d2c12c7449be022",
     });
   }, 5000);
 
   setTimeout(() => {
-    socket.emit("leave_omahaRoom", {
+    socket.emit("omaha_request_leave_omaha_room", {
       playerId: "z3Ea65zmolhR2Uvd6O2mKAeei8C3",
       roomId: "5d7a514b5d2c12c7449be022",
     });
