@@ -40,21 +40,89 @@ socket.on("connect", () => {
       chipsAmount: 10000,
       seatNo: 4,
     });
-  }, 2000);
+  }, 4000);
+
+  setTimeout(() => {
+    socket.emit("omaha_request_handle_player_action", {
+      playerId: "uTUc6dzSrWfVE5ncbBWloTlhUGy1",
+      roomId: "5d7a514b5d2c12c7449be022",
+      action: "CHECK",
+      stage: "PRE_FLOP_BET",
+    });
+  }, 9000);
+
+  setTimeout(() => {
+    socket.emit("omaha_request_handle_player_action", {
+      playerId: "z3Ea65zmolhR2Uvd6O2mKAeei8C3",
+      roomId: "5d7a514b5d2c12c7449be022",
+      action: "CHECK",
+      stage: "PRE_FLOP_BET",
+    });
+  }, 15000);
+
+
+  // setTimeout(() => {
+  //   socket.emit("omaha_request_handle_player_action", {
+  //     playerId: "uTUc6dzSrWfVE5ncbBWloTlhUGy1",
+  //     roomId: "5d7a514b5d2c12c7449be022",
+  //     action: "CHECK",
+  //     stage: "BET_ON_FLOPS",
+  //   });
+  // }, 4000);
+  // setTimeout(() => {
+  //   socket.emit("omaha_request_handle_player_action", {
+  //     playerId: "z3Ea65zmolhR2Uvd6O2mKAeei8C3",
+  //     roomId: "5d7a514b5d2c12c7449be022",
+  //     action: "CHECK",
+  //     stage: "BET_ON_FLOPS",
+  //   });
+  // }, 5000);
+  // setTimeout(() => {
+  //   socket.emit("omaha_request_handle_player_action", {
+  //     playerId: "uTUc6dzSrWfVE5ncbBWloTlhUGy1",
+  //     roomId: "5d7a514b5d2c12c7449be022",
+  //     action: "CHECK",
+  //     stage: "BET_ON_TURNS",
+  //   });
+  // }, 6000);
+  // setTimeout(() => {
+  //   socket.emit("omaha_request_handle_player_action", {
+  //     playerId: "z3Ea65zmolhR2Uvd6O2mKAeei8C3",
+  //     roomId: "5d7a514b5d2c12c7449be022",
+  //     action: "CHECK",
+  //     stage: "BET_ON_TURNS",
+  //   });
+  // }, 7000);
+  // setTimeout(() => {
+  //   socket.emit("omaha_request_handle_player_action", {
+  //     playerId: "uTUc6dzSrWfVE5ncbBWloTlhUGy1",
+  //     roomId: "5d7a514b5d2c12c7449be022",
+  //     action: "CHECK",
+  //     stage: "FINAL_BET_ROUND",
+  //   });
+  // }, 8000);
+  // setTimeout(() => {
+  //   socket.emit("omaha_request_handle_player_action", {
+  //     playerId: "z3Ea65zmolhR2Uvd6O2mKAeei8C3",
+  //     roomId: "5d7a514b5d2c12c7449be022",
+  //     action: "CHECK",
+  //     stage: "FINAL_BET_ROUND",
+  //   });
+  // }, 9000);
 
   setTimeout(() => {
     socket.emit("omaha_request_leave_omaha_room", {
       playerId: "uTUc6dzSrWfVE5ncbBWloTlhUGy1",
       roomId: "5d7a514b5d2c12c7449be022",
     });
-  }, 5000);
+  }, 20000);
 
   setTimeout(() => {
     socket.emit("omaha_request_leave_omaha_room", {
       playerId: "z3Ea65zmolhR2Uvd6O2mKAeei8C3",
       roomId: "5d7a514b5d2c12c7449be022",
     });
-  }, 8000);
+  }, 22000);
 });
 
 socket.on("*", (eventName, ...args) => {
